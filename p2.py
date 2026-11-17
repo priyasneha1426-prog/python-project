@@ -1,17 +1,35 @@
+
 import random
-number=random.randint(1,100)
-print("guessing the number")
-print(number)
-for i in range(1,100):
-    
-    print("if the guess is correct enter 0 f your no. is less than the given number enter -1 else enter 1")
-    num=int(input("enter your choice:"))
-    if (num==0):
-        result="number is correct"
+
+number = random.randint(1, 100)
+
+print("NUMBER GUESSING GAME")
+
+guess = random.randint(1, 100)
+
+for i in range(1, 101):
+
+    print("Computer's guess:", guess)
+
+    print("Enter 0 if correct")
+    print("Enter -1 if your guess should be lower")
+    print("Enter 1 if your guess should be higher")
+
+    num = int(input("Enter your choice: "))
+
+    if num == 0:
+        print("Computer guessed the correct number!")
         break
-    elif(num==-1):
-        result=random.randint(1,number-1)
+
+    elif num == -1:
+        guess = random.randint(1, guess - 1)
+
+    elif num == 1:
+        guess = random.randint(guess + 1, 100)
+
     else:
-        result=random.randint(number+1,100)
-    print(result)
-    
+        print("Invalid choice!")
+
+else:
+    print("Maximum attempts reached!")
+
