@@ -1,3 +1,4 @@
+print("rock or paper or scissors")
 player1 = input("Enter player1 choice:").lower()
 player2 = input("Enter player2 choice:").lower()
 
